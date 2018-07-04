@@ -15,7 +15,7 @@ const users = [
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/docusaurus.svg'.
     image: '/img/Squirrelly1.png',
-    infoLink: 'https://www.facebook.com',
+    infoLink: 'https://nebrelbug.github.io/squirrelly-website',
     pinned: true,
   },
 ];
@@ -23,15 +23,15 @@ const users = [
 const siteConfig = {
   title: 'SquirrellyJS' /* title for your website */,
   tagline: 'A new, modern, and blazing fast Template Engine',
-  url: 'https://your-docusaurus-test-site.com' /* your website url */,
-  baseUrl: '/' /* base url for your project */,
+  url: 'https://nebrelbug.github.io' /* your website url */,
+  baseUrl: '/squirrelly-website/' /* base url for your project */,
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'test-site',
-  organizationName: 'facebook',
+  projectName: 'squirrelly',
+  organizationName: 'nebrelbug',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
