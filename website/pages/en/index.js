@@ -80,9 +80,9 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html', language)}>Example Link</Button>
-            <Button href={docUrl('doc2.html', language)}>Example Link 2</Button>
+            <Button href="#try">Demo</Button>
+            <Button href={docUrl('doc1.html', language)}>Get Started</Button>
+            <Button href={docUrl('doc2.html', language)}>Performance Stats</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -103,16 +103,16 @@ const Features = props => (
   <Block layout="fourColumn">
     {[
       {
-        content: 'This is the content of my feature',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Unlike many template engines, Squirrelly doesn\'t do token parsing. Instead, it uses RegExp, which is backed by C code in JavaScript. Squirrelly consistently outperforms other template engines in benchmarks.',
+        image: imgUrl('lightning.png'),
         imageAlign: 'top',
-        title: 'Feature One',
+        title: 'Built for Performance',
       },
       {
-        content: 'The content of my second feature',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Squirrelly supports custom partials, helpers, and filters.',
+        image: imgUrl('cog.png'),
         imageAlign: 'top',
-        title: 'Feature Two',
+        title: 'Configurable',
       },
     ]}
   </Block>
@@ -121,9 +121,16 @@ const Features = props => (
 const FeatureCallout = props => (
   <div
     className="productShowcaseSection paddingBottom"
-    style={{textAlign: 'center'}}>
-    <h2>Feature Callout</h2>
-    <MarkdownBlock>These are features of this project</MarkdownBlock>
+    >
+    <h2 style={{marginLeft: '1.3em', textAlign: 'left'}}>Features</h2>
+    <ul style={{textAlign: 'left', listStylePosition: 'inside', fontSize: '20px'}}>
+      <li>Blazing Fast</li>
+      <li>Non-Whitespace Sensitive</li>
+      <li>Not bound to a specific language</li>
+      <li>Custom Helpers</li>
+      <li>Custom Filters</li>
+      <li>Partials</li>
+    </ul>
   </div>
 );
 
@@ -131,29 +138,51 @@ const LearnHow = props => (
   <Block background="light">
     {[
       {
-        content: 'Talk about learning how to use this',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Run \'npm install squirrelly\' or link to it on Unpkg',
+        image: imgUrl('Squirrelly1.png'),
         imageAlign: 'right',
-        title: 'Learn How',
+        title: 'Installation',
       },
     ]}
   </Block>
 );
 
+const tryContent = '\
+<script>\
+function SqrlParse () {\
+  var textContent = document.getElementById("stuffToParse").value;\
+  var SqrlFunction = Sqrl.Precompile(textContent);\
+  document.getElementById("templateFunction").innerHTML = SqrlFunction.toString();\
+  var Sqrldata = {\
+    name: "Joe",\
+    list: "hi",\
+    parent: {\
+      firstchild: "hi",\
+      secondchild: "Mr. Potato"\
+    }\
+};\
+document.getElementById("Data").innerHTML = JSON.stringify(Sqrldata);\
+document.getElementById("templateResult").innerHTML = SqrlFunction(Sqrldata);\
+}\
+</script>\
+<div style="box-sizing: border-box; float: left; width: 50%; height: 200px;"><h2>Type something</h2><textarea id="stuffToParse"oninput="SqrlParse()" style="width: 100%; height:70%;"></textarea></div>\
+<div style="box-sizing: border-box; float: right; width: 50%; height: 200px;"><h2>Squirrelly returns this function:</h2><div id="templateFunction" style="width: 100%; height:70%;"></div></div>\
+<div style="box-sizing: border-box; float: left; width: 50%; height: 200px;"><h2>Data</h2><div id="templateResult" style="width: 100%; height:70%;"></div></div>\
+<div style="box-sizing: border-box; float: right; width: 50%; height: 200px;"><h2>Result</h2><div id="Data" style="width: 100%; height:70%;"></div></div>\
+'
 const TryOut = props => (
   <Block id="try">
     {[
       {
-        content: 'Talk about trying this out',
-        image: imgUrl('docusaurus.svg'),
+        content: tryContent,
         imageAlign: 'left',
-        title: 'Try it Out',
+        title: '<h1>Try it Out</h1>',
       },
     ]}
   </Block>
 );
 
-const Description = props => (
+/*const Description = props => (
   <Block background="dark">
     {[
       {
@@ -164,7 +193,7 @@ const Description = props => (
       },
     ]}
   </Block>
-);
+);*/
 
 const Showcase = props => {
   if ((siteConfig.users || []).length === 0) {
@@ -208,7 +237,6 @@ class Index extends React.Component {
           <FeatureCallout />
           <LearnHow />
           <TryOut />
-          <Description />
           <Showcase language={language} />
         </div>
       </div>

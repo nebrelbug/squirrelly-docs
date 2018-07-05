@@ -1,8 +1,11 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Installation": ["doc1", "doc2", "doc3"],
+    "Basic Concepts": ["doc2"],
+    "Helpers": ["doc3"],
+    "Filters": ["doc3"],
+    "Partials": ["doc3"],
+    "Layouts": ["doc3"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
