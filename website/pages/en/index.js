@@ -150,7 +150,7 @@ const LearnHow = props => (
 const tryContent = '\
 <script>\
 function SqrlParse () {\
-  var textContent = document.getElementById("stuffToParse").value;\
+  var textContent = document.getElementById("stuffToParse").value || "";\
   var SqrlFunction = Sqrl.Precompile(textContent);\
   document.getElementById("templateFunction").innerHTML = SqrlFunction.toString();\
   var Sqrldata = {\
@@ -162,13 +162,14 @@ function SqrlParse () {\
     }\
 };\
 document.getElementById("Data").innerHTML = JSON.stringify(Sqrldata);\
-document.getElementById("templateResult").innerHTML = SqrlFunction(Sqrldata);\
+document.getElementById("templateResult").textContent = SqrlFunction(Sqrldata, Sqrl);\
 }\
 </script>\
-<div style="box-sizing: border-box; float: left; width: 50%; height: 200px;"><h2>Type something</h2><textarea id="stuffToParse"oninput="SqrlParse()" style="width: 100%; height:70%;"></textarea></div>\
-<div style="box-sizing: border-box; float: right; width: 50%; height: 200px;"><h2>Squirrelly returns this function:</h2><div id="templateFunction" style="width: 100%; height:70%;"></div></div>\
-<div style="box-sizing: border-box; float: left; width: 50%; height: 200px;"><h2>Data</h2><div id="templateResult" style="width: 100%; height:70%;"></div></div>\
-<div style="box-sizing: border-box; float: right; width: 50%; height: 200px;"><h2>Result</h2><div id="Data" style="width: 100%; height:70%;"></div></div>\
+<div style="box-sizing: border-box; float: left; width: 50%; height: 200px;"><h2>Type something</h2><textarea id="stuffToParse" oninput="SqrlParse()" style="width: 100%; height:70%; max-width: 100%; resize: none;">Hi, my name is {{parent.secondchild}}</textarea></div>\
+<div style="box-sizing: border-box; float: right; width: 50%; height: 200px;"><h2>Squirrelly returns:</h2><div id="templateFunction" style="width: 100%; height:70%; overflow-y:auto;"></div></div>\
+<div style="box-sizing: border-box; float: left; width: 50%; height: 200px;"><h2>Data</h2><div id="Data" style="width: 100%; height:70%;"></div></div>\
+<div style="box-sizing: border-box; float: right; width: 50%; height: 200px;"><h2>Result</h2><div id="templateResult" style="width: 100%; height:70%;"></div></div>\
+<script>SqrlParse()</script>\
 '
 const TryOut = props => (
   <Block id="try">
