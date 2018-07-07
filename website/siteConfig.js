@@ -28,6 +28,7 @@ const siteConfig = {
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
+  cleanUrl: true,
 
   // Used for publishing and more
   projectName: 'squirrelly-website',
@@ -90,6 +91,7 @@ const siteConfig = {
   /* Open Graph and Twitter card images */
   ogImage: 'img/Squirrelly1.png',
   twitterImage: 'img/Squirrelly1.png',
+  cname: 'squirrelly.js.org'
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
