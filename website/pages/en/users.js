@@ -32,7 +32,7 @@ class Users extends React.Component {
           <div className="showcaseSection">
             <div className="prose">
               <h1>Who's Using This?</h1>
-              <p>This project is used by many folks</p>
+              <p>Not many people yet. Be one of the first!</p>
             </div>
             <div className="logos">{showcase}</div>
             <p>Are you using this project?</p>

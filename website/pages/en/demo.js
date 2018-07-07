@@ -69,41 +69,100 @@ const Block = props => (
   </Container>
 );
 
-const tryContent = '\
-<script>\
-function SqrlParse () {\
-  var textContent = document.getElementById("stuffToParse").value || "";\
-  var SqrlFunction = Sqrl.Precompile(textContent);\
-  document.getElementById("templateFunction").innerHTML = SqrlFunction.toString();\
-  var Sqrldata = {\
-    name: "Joe",\
-    list: "hi",\
-    parent: {\
-      firstchild: "hi",\
-      secondchild: "Mr. Potato"\
-    }\
-};\
-document.getElementById("Data").innerHTML = JSON.stringify(Sqrldata);\
-document.getElementById("templateResult").textContent = SqrlFunction(Sqrldata, Sqrl);\
-}\
-</script>\
-<div style="box-sizing: border-box; float: left; width: 50%; height: 200px;"><h2>Type something</h2><textarea id="stuffToParse" oninput="SqrlParse()" style="width: 100%; height:70%; max-width: 100%; resize: none;">Hi, my name is {{parent.secondchild}}</textarea></div>\
-<div style="box-sizing: border-box; float: right; width: 50%; height: 200px;"><h2>Squirrelly returns:</h2><div id="templateFunction" style="width: 100%; height:70%; overflow-y:auto;"></div></div>\
-<div style="box-sizing: border-box; float: left; width: 50%; height: 200px;"><h2>Data</h2><div id="Data" style="width: 100%; height:70%;"></div></div>\
-<div style="box-sizing: border-box; float: right; width: 50%; height: 200px;"><h2>Result</h2><div id="templateResult" style="width: 100%; height:70%;"></div></div>\
-<script>SqrlParse()</script>\
-'
-const TryOut = props => (
-  <Block id="try">
-    {[
-      {
-        content: tryContent,
-        imageAlign: 'left',
-        title: '<h1>Try it Out</h1>',
-      },
-    ]}
-  </Block>
-);
+const SqrlInputStyle = {
+    boxSizing: 'border-box',
+    width: '100%',
+    height: '25vh',
+    maxWidth: '100%',
+    resize: 'none'
+}
+const SqrlDivInputStyle = {
+    float: 'left',
+    width: '42vw',
+    height: '45vh',
+    boxSizing: 'border-box',
+    float: 'left',
+    padding: '4vw'
+}
+
+const divFloatRightStyle = {
+    boxSizing: 'border-box',
+    float: 'right',
+    width: '42vw',
+    padding: '4vw',
+    height: '45vh'
+}
+
+const divFloatLeftStyle = {
+    boxSizing: 'border-box',
+    float: 'left',
+    width: '42vw',
+    height: '45vh',
+    padding: '4vw'
+}
+
+const templateFunctionStyle = {
+    boxSizing: 'border-box',
+    width: '100%',
+    height: '100%',
+    overflowY: 'auto'
+}
+const dataStyle = {
+    boxSizing: 'border-box',
+    width: '100%',
+    height: '100%'
+}
+const templateResultStyle = {
+    boxSizing: 'border-box',
+    width: '100%',
+    height: '100%'
+}
+
+class SqrlInput extends React.Component {
+  
+    render() {
+      return (
+        <textarea type="text" id="SqrlInput" value="Hi, my name is {{parent.secondchild}}" style = {SqrlInputStyle} onChange={this.handleChange}>h</textarea>
+      );
+    }
+  }
+  
+class SqrlFields extends React.Component {
+    render () {
+        return (
+        <div style={{height: '100vh', marginTop: '-3em'}}>
+            <div style={SqrlDivInputStyle}>
+            <h2 style={{fontSize: '4vw'}}>Type something</h2>
+            <SqrlInput />
+            </div>
+            <div style={divFloatRightStyle}><h2 style={{fontSize: '4vw'}}>Squirrelly returns:</h2><div id="templateFunction" style={templateFunctionStyle}></div></div>
+            <div style={divFloatLeftStyle}><h2 style={{fontSize: '4vw'}}>Data</h2><div id="SqrlData" style={dataStyle}></div></div>
+            <div style={divFloatRightStyle}><h2 style={{fontSize: '4vw'}}>Result</h2><div id="templateResult" style={templateResultStyle}></div></div>
+            <script
+          dangerouslySetInnerHTML={{ __html:
+            'const Sqrldata = {\
+                name: "Joe",\
+                list: "hi",\
+                parent: {\
+                  firstchild: "hi",\
+                  secondchild: "Mr. Potato"\
+                }\
+            };\
+            document.getElementById("SqrlData").innerHTML = JSON.stringify(Sqrldata);\
+            function handleChange() {\
+                var SqrlFunc = Sqrl.Precompile(document.getElementById("SqrlInput").value);\
+                var SqrlResult = SqrlFunc(Sqrldata, Sqrl);\
+                document.getElementById("templateFunction").innerHTML = SqrlFunc.toString();\
+                document.getElementById("templateResult").innerHTML = SqrlResult;\
+            }\
+            document.getElementById("SqrlInput").addEventListener("input", handleChange);\
+            handleChange();'
+          }}
+        />
+        </div>
+        )
+    }
+}
 
 class Index extends React.Component {
   render() {
@@ -112,8 +171,7 @@ class Index extends React.Component {
     return (
       <div>
         <div className="mainContainer">
-          <HomeSplash/>
-          <TryOut />
+          <SqrlFields />
         </div>
       </div>
     );

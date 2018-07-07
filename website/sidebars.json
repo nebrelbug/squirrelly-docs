@@ -1,8 +1,8 @@
 {
   "docs": {
-    "Installation": ["doc1", "doc2", "doc3"],
-    "Basic Concepts": ["doc2"],
-    "Helpers": ["doc3"],
+    "Getting Started": ["installation", "intro", "doc3"],
+    "Basic Concepts": ["doc3"],
+    "Helpers": ["doc3", "doc3"],
     "Filters": ["doc3"],
     "Partials": ["doc3"],
     "Layouts": ["doc3"]

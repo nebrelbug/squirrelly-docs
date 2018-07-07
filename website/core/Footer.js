@@ -7,6 +7,11 @@
 
 const React = require('react');
 
+const footerStyle = {
+    display: 'inline-block',
+    width: '100vw'
+}
+
 class Footer extends React.Component {
   docUrl(doc, language) {
     const baseUrl = this.props.config.baseUrl;
@@ -21,7 +26,7 @@ class Footer extends React.Component {
   render() {
     const currentYear = new Date().getFullYear();
     return (
-      <footer className="nav-footer" id="footer">
+      <footer className="nav-footer" id="footer" style={footerStyle}>
         <section className="sitemap">
           <a href={this.props.config.baseUrl} className="nav-home">
             {this.props.config.footerIcon && (

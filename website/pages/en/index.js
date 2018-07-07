@@ -237,7 +237,6 @@ class Index extends React.Component {
           <Features />
           <FeatureCallout />
           <LearnHow />
-          <TryOut />
           <Showcase language={language} />
         </div>
       </div>
