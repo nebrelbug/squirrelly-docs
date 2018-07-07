@@ -105,7 +105,8 @@ const templateFunctionStyle = {
     boxSizing: 'border-box',
     width: '100%',
     height: '100%',
-    overflowY: 'auto'
+    overflowY: 'auto',
+    zIndex: 999
 }
 const dataStyle = {
     boxSizing: 'border-box',
@@ -122,7 +123,7 @@ class SqrlInput extends React.Component {
   
     render() {
       return (
-        <textarea type="text" id="SqrlInput" value="Hi, my name is {{parent.secondchild}}" style = {SqrlInputStyle} onChange={this.handleChange}>h</textarea>
+        <textarea type="text" id="SqrlInput" value="Hi, my name is {{parent.secondchild}}" style = {SqrlInputStyle}></textarea>
       );
     }
   }
@@ -130,7 +131,7 @@ class SqrlInput extends React.Component {
 class SqrlFields extends React.Component {
     render () {
         return (
-        <div style={{height: '100vh', marginTop: '-3em'}}>
+        <div style={{height: '100vh', marginTop: '-6em'}}>
             <div style={SqrlDivInputStyle}>
             <h2 style={{fontSize: '4vw'}}>Type something</h2>
             <SqrlInput />

@@ -80,8 +80,8 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
-            <Button href="#try">Demo</Button>
-            <Button href={docUrl('doc1.html', language)}>Get Started</Button>
+            <Button href="/squirrelly-website/demo">Demo</Button>
+            <Button href={docUrl('installation.html', language)}>Get Started</Button>
             <Button href={docUrl('doc2.html', language)}>Performance Stats</Button>
           </PromoSection>
         </div>
@@ -103,7 +103,7 @@ const Features = props => (
   <Block layout="fourColumn">
     {[
       {
-        content: 'Unlike many template engines, Squirrelly doesn\'t do token parsing. Instead, it uses RegExp, which is backed by C code in JavaScript. Squirrelly consistently outperforms other template engines in benchmarks.',
+        content: 'Unlike many template engines, Squirrelly doesn\'t do token parsing. Instead, it uses RegExp, which is backed by highly optimized machine code in JavaScript. Squirrelly consistently outperforms other template engines in benchmarks.',
         image: imgUrl('lightning.png'),
         imageAlign: 'top',
         title: 'Built for Performance',
@@ -146,55 +146,6 @@ const LearnHow = props => (
     ]}
   </Block>
 );
-
-const tryContent = '\
-<script>\
-function SqrlParse () {\
-  var textContent = document.getElementById("stuffToParse").value || "";\
-  var SqrlFunction = Sqrl.Precompile(textContent);\
-  document.getElementById("templateFunction").innerHTML = SqrlFunction.toString();\
-  var Sqrldata = {\
-    name: "Joe",\
-    list: "hi",\
-    parent: {\
-      firstchild: "hi",\
-      secondchild: "Mr. Potato"\
-    }\
-};\
-document.getElementById("Data").innerHTML = JSON.stringify(Sqrldata);\
-document.getElementById("templateResult").textContent = SqrlFunction(Sqrldata, Sqrl);\
-}\
-</script>\
-<div style="box-sizing: border-box; float: left; width: 50%; height: 200px;"><h2>Type something</h2><textarea id="stuffToParse" oninput="SqrlParse()" style="width: 100%; height:70%; max-width: 100%; resize: none;">Hi, my name is {{parent.secondchild}}</textarea></div>\
-<div style="box-sizing: border-box; float: right; width: 50%; height: 200px;"><h2>Squirrelly returns:</h2><div id="templateFunction" style="width: 100%; height:70%; overflow-y:auto;"></div></div>\
-<div style="box-sizing: border-box; float: left; width: 50%; height: 200px;"><h2>Data</h2><div id="Data" style="width: 100%; height:70%;"></div></div>\
-<div style="box-sizing: border-box; float: right; width: 50%; height: 200px;"><h2>Result</h2><div id="templateResult" style="width: 100%; height:70%;"></div></div>\
-<script>SqrlParse()</script>\
-'
-const TryOut = props => (
-  <Block id="try">
-    {[
-      {
-        content: tryContent,
-        imageAlign: 'left',
-        title: '<h1>Try it Out</h1>',
-      },
-    ]}
-  </Block>
-);
-
-/*const Description = props => (
-  <Block background="dark">
-    {[
-      {
-        content: 'This is another description of how this project is useful',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'right',
-        title: 'Description',
-      },
-    ]}
-  </Block>
-);*/
 
 const Showcase = props => {
   if ((siteConfig.users || []).length === 0) {

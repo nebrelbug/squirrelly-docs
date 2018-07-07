@@ -43,6 +43,8 @@ const siteConfig = {
     {page: 'demo', label: 'Demo' },
     {page: 'performance', label: 'Performance'},
     {blog: true, label: 'Blog'},
+    {page: 'help', label: 'Help'},
+    {href: 'https://github.com/nebrelbug/squirrelly', label: 'GitHub' },
   ],
 
   // If you have users set above, you add it here:
@@ -57,6 +59,9 @@ const siteConfig = {
   colors: {
     primaryColor: '#ca5010',
     secondaryColor: 'rgb(0,0,0)',
+  },
+  highlight: {
+    theme: 'atom-one-dark',
   },
 
   /* custom fonts for website */
