@@ -12,6 +12,21 @@ const footerStyle = {
     width: '100vw'
 }
 
+function createScript() {
+  return {__html: '(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);'};
+};
+
+class Policy extends React.Component {
+  render () {
+    return (
+      <div style = {{width: '105px', height: '22px'}}>
+      <a href="https://www.iubenda.com/privacy-policy/76492158" class="iubenda-white iubenda-embed " title="Privacy Policy">Privacy Policy</a>
+      <script type="text/javascript" dangerouslySetInnerHTML={createScript()}></script>
+      </div>  
+  )
+  }
+
+}
 class Footer extends React.Component {
   docUrl(doc, language) {
     const baseUrl = this.props.config.baseUrl;
@@ -40,13 +55,13 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
+            <a href={this.docUrl('installation.html', this.props.language)}>
               Installation
             </a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>
+            <a href={this.docUrl('intro.html', this.props.language)}>
               Getting Started
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
+            <a href={this.docUrl('helpers.html', this.props.language)}>
               Writing Helpers and Filters
             </a>
           </div>
@@ -61,22 +76,12 @@ class Footer extends React.Component {
               rel="noreferrer noopener">
               Stack Overflow
             </a>
-            <a href="https://discordapp.com/">Project Chat</a>
           </div>
           <div>
             <h5>More</h5>
             <a href={this.props.config.baseUrl + 'blog'}>Blog</a>
             <a href="https://github.com/">GitHub</a>
-            <a
-              className="github-button"
-              href={this.props.config.repoUrl}
-              data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
-              data-show-count={true}
-              data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star this project on GitHub">
-              Star
-            </a>
+            <Policy />
           </div>
         </section>
         <section className="copyright">{this.props.config.copyright}</section>
