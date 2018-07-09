@@ -96,6 +96,7 @@ const siteConfig = {
   /* Open Graph and Twitter card images */
   ogImage: 'img/Squirrelly1.png',
   twitterImage: 'img/Squirrelly1.png',
+  gaTrackingId: 'UA-122013092-1',
   cname: 'squirrelly.js.org'
 
   // You may provide arbitrary config keys to be used as needed by your
