@@ -14,7 +14,7 @@ const users = [
     caption: 'Ben Gubler',
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-    image: '/squirrelly-website/img/nebrelbug.png',
+    image: '/img/nebrelbug.png',
     infoLink: 'https://github.com/nebrelbug',
     pinned: true,
   },
@@ -23,8 +23,8 @@ const users = [
 const siteConfig = {
   title: 'SquirrellyJS' /* title for your website */,
   tagline: 'A new, modern, and blazing fast Template Engine',
-  url: 'https://nebrelbug.github.io' /* your website url */,
-  baseUrl: '/squirrelly-website/' /* base url for your project */,
+  url: 'https://squirrelly.js.org' /* your website url */,
+  baseUrl: '/' /* base url for your project */,
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
