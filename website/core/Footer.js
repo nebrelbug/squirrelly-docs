@@ -20,7 +20,7 @@ class Policy extends React.Component {
   render () {
     return (
       <div style = {{width: '105px', height: '22px'}}>
-      <a href="https://www.iubenda.com/privacy-policy/76492158" class="iubenda-white iubenda-embed " title="Privacy Policy">Privacy Policy</a>
+      <a href="https://www.iubenda.com/privacy-policy/76492158" className="iubenda-white iubenda-embed " title="Privacy Policy">Privacy Policy</a>
       <script type="text/javascript" dangerouslySetInnerHTML={createScript()}></script>
       </div>  
   )

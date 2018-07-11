@@ -123,7 +123,7 @@ class SqrlInput extends React.Component {
   
     render() {
       return (
-        <textarea type="text" id="SqrlInput" value="Hi, my name is {{parent.secondchild}}" style = {SqrlInputStyle}></textarea>
+        <textarea type="text" id="SqrlInput" value="Hi, my name is {{parent.secondchild}}. {{if(~~obj.children) test}}{{foreach(~~obj.children) looping}}Name: {{@this.name}} {{@this.lastName}}, {{/foreach looping}}\n{{/if test}}" style = {SqrlInputStyle}></textarea>
       );
     }
   }
@@ -147,6 +147,33 @@ class SqrlFields extends React.Component {
                 parent: {\
                   firstchild: "hi",\
                   secondchild: "Mr. Potato"\
+                },\
+                bool: true,\
+                arr: [1, 2, "three", {value: "four"}, 5],\
+                obj: {\
+                  name: "Hey",\
+                  children: {\
+                    first: {\
+                      name: "Ben",\
+                      lastName: "Gubler"\
+                    },\
+                    second: {\
+                      name: "Johnny",\
+                      lastName: "Appleseed"\
+                    },\
+                    third: {\
+                      name: "Ada",\
+                      lastName: "Lovelace"\
+                    },\
+                    fourth: {\
+                      name: "Mister",\
+                      lastName: "Potato"\
+                    },\
+                    fifth: {\
+                      name: "Leonardo",\
+                      lastName: "da Vinci"\
+                    }\
+                  }\
                 }\
             };\
             document.getElementById("SqrlData").innerHTML = JSON.stringify(Sqrldata);\
