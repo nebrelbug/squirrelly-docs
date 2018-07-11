@@ -106,12 +106,18 @@ const templateFunctionStyle = {
     width: '100%',
     height: '100%',
     overflowY: 'auto',
-    zIndex: 999
+    zIndex: 999,
+    backgroundColor: '#eee',
+    wordWrap: "break-word", /* IE>=5.5 */
+    whiteSpace: "pre", /* IE>=6 */
+    whiteSpace: "-moz-pre-wrap", /* For Fx<=2 */
+    whiteSpace: "pre-wrap" /* Fx>3, Opera>8, Safari>3*/
 }
 const dataStyle = {
     boxSizing: 'border-box',
     width: '100%',
-    height: '100%'
+    height: '100%',
+    marginBottom: '10em'
 }
 const templateResultStyle = {
     boxSizing: 'border-box',
@@ -136,7 +142,7 @@ class SqrlFields extends React.Component {
             <h2 style={{fontSize: '4vw'}}>Type something</h2>
             <SqrlInput />
             </div>
-            <div style={divFloatRightStyle}><h2 style={{fontSize: '4vw'}}>Squirrelly returns:</h2><div id="templateFunction" style={templateFunctionStyle}></div></div>
+            <div style={divFloatRightStyle}><h2 style={{fontSize: '4vw'}}>Squirrelly returns:</h2><pre style={templateFunctionStyle}><code id="templateFunction"></code></pre></div>
             <div style={divFloatLeftStyle}><h2 style={{fontSize: '4vw'}}>Data</h2><div id="SqrlData" style={dataStyle}></div></div>
             <div style={divFloatRightStyle}><h2 style={{fontSize: '4vw'}}>Result</h2><div id="templateResult" style={templateResultStyle}></div></div>
             <script

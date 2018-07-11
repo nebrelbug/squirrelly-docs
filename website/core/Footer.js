@@ -9,7 +9,8 @@ const React = require('react');
 
 const footerStyle = {
     display: 'inline-block',
-    width: '100vw'
+    width: '100vw',
+    marginTop: '10em'
 }
 
 function createScript() {
