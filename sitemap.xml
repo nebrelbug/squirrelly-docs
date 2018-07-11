@@ -5,11 +5,7 @@
 <url> <loc>https://squirrelly.js.org/index</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://squirrelly.js.org/en/index" /> </url>
 <url> <loc>https://squirrelly.js.org/performance</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://squirrelly.js.org/en/performance" /> </url>
 <url> <loc>https://squirrelly.js.org/users</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://squirrelly.js.org/en/users" /> </url>
-<url> <loc>https://squirrelly.js.org/blog/2017/10/24/new-version-1.0.0</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://squirrelly.js.org/blog/2017/09/26/adding-rss</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://squirrelly.js.org/blog/2017/09/25/testing-rss</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://squirrelly.js.org/blog/2017/04/10/blog-post-two</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://squirrelly.js.org/blog/2016/03/11/blog-post</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://squirrelly.js.org/blog/2018/07/11/announcing-squirrelly</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://squirrelly.js.org/docs/explanation</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://squirrelly.js.org/docs/explanation" /> </url>
 <url> <loc>https://squirrelly.js.org/docs/filters</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://squirrelly.js.org/docs/filters" /> </url>
 <url> <loc>https://squirrelly.js.org/docs/helpers</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://squirrelly.js.org/docs/helpers" /> </url>
